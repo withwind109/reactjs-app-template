@@ -1,7 +1,7 @@
 const webpack = require('webpack');
 const path = require('path');
 
-const sourcePath = path.join(__dirname, './client');
+const sourcePath = path.join(__dirname, './src');
 const staticsPath = path.join(__dirname, './static');
 
 module.exports = function (env) {
@@ -54,7 +54,7 @@ module.exports = function (env) {
     devtool: isProd ? 'source-map' : 'eval',
     context: sourcePath,
     entry: {
-      js: './index.js',
+      js: './main.js',
       vendor: ['react']
     },
     output: {
@@ -113,7 +113,7 @@ module.exports = function (env) {
     },
 
     devServer: {
-      contentBase: './client',
+      contentBase: './src',
       historyApiFallback: true,
       port: 3000,
       compress: isProd,
